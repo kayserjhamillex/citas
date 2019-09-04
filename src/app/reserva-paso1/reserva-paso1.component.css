@@ -1,0 +1,28 @@
+#escondete
+{
+    display: none;
+    text-align: center;
+}
+h2,
+h4,
+h5,
+h6,
+label
+{
+    text-align: center;
+}
+p
+{
+    text-align: justify;
+}
+.cajas
+{
+    margin: 0px;
+    padding: 1px;
+}
+button
+{
+    text-align: center;
+    margin: auto;
+}
+

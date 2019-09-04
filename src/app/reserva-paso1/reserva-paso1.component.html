@@ -1,0 +1,61 @@
+<app-seheader></app-seheader>
+<h2>
+    Reserva tu Cita
+</h2>
+<div class="container">
+    <form class="row justify-content-md-center" [formGroup]="reservaForm" (ngSubmit)="buscarDoctorDisponible(reservaForm.value)">
+        <div class="row justify-content-md-center">
+            <div class="col-12">
+                <h4 for="tipo">
+                    Especialidades
+                </h4>
+            </div>
+            <br>
+            <br>
+            <div class="col-12 col-sm-4 col-md-3 cajas" *ngFor="let tipo of Especialidad; let i = index">
+                <div class="col-12 imgespecialidad w-100">
+                    <img src="https://mdbootstrap.com/img/logo/mdb192x192.jpg" class="imagenespecialidad w-100 rounded-circle">
+                </div>
+                <br>
+                <div class="col-12">
+                    <h5>
+                        {{tipo.Name}}
+                    </h5>
+                </div>
+                <div class="col-12">
+                    <h6>
+                        Precio: S/.{{tipo.cost}}.00
+                    </h6>
+                </div>
+                <div class="col-12">
+                    <p>
+                        {{tipo.descripcion}}
+                    </p>
+                </div>
+                <button class="btn btn-primary btn-center" type="button" (click)="activar=!activar; test(i)">
+                    Sacar Cita
+                </button>
+                <div *ngIf="activar">
+                    <div>
+                        <label for="fecha">
+                            ¿Que dia sera tu cita?
+                        </label>
+                        <br>
+                        <input type="date" formControlName="dia">
+                        <input id="escondete" type="text" [value]="tipo.IdEspecialidad" formControlName="elIndice">
+                    </div>
+                    <button type="submit" [value]="tipo.IdEspecialidad">
+                        Horas Disponibles
+                    </button>
+                </div>
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+        </div>
+    </form>
+    <br>
+    <br>
+
+</div>
