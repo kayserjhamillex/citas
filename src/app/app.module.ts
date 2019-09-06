@@ -50,6 +50,9 @@ import { ReservaPaso7Component } from './reserva-paso7/reserva-paso7.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { ServbodyComponent } from './servicios/servbody/servbody.component';
 import { ServheaderComponent } from './servicios/servheader/servheader.component';
+import { DoctoresComponent } from './doctores/doctores.component';
+import { DocbodyComponent } from './doctores/docbody/docbody.component';
+import { DocheaderComponent } from './doctores/docheader/docheader.component';
 // import { AuthGuardService } from './services/auth-guard.service';
 
 
@@ -127,7 +130,10 @@ const config = new AuthServiceConfig([
     ReservaPaso7Component,
     ServiciosComponent,
     ServbodyComponent,
-    ServheaderComponent
+    ServheaderComponent,
+    DoctoresComponent,
+    DocbodyComponent,
+    DocheaderComponent
   ],
   imports: [
     BrowserModule,

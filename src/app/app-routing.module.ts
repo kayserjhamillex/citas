@@ -15,6 +15,8 @@ import { ReservaPaso1Component } from './reserva-paso1/reserva-paso1.component';
 import { ReservaPaso2Component } from './reserva-paso2/reserva-paso2.component';
 import { ReservaPaso3Component } from './reserva-paso3/reserva-paso3.component';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { ReservaPaso5Component } from './reserva-paso5/reserva-paso5.component';
+import { DoctoresComponent } from './doctores/doctores.component';
 
 
 const routes: Routes = [
@@ -24,6 +26,7 @@ const routes: Routes = [
   { path: 'nosotros', component: NosotrosComponent},
   { path: 'especilidad', component: EspecialidadComponent},
   { path: 'servicios', component: ServiciosComponent},
+  { path: 'doctores', component: DoctoresComponent},
   { path: 'contactanos', component: ContactanosComponent},
   { path: 'reserva', component: SelecespecialidadComponent},
   { path: 'datetime', component: SelececdatetimeComponent},
@@ -31,7 +34,8 @@ const routes: Routes = [
   { path: 'boleta', component: BoletaComponent},
   { path: 'reserva/paso1', component: ReservaPaso1Component},
   { path: 'reserva/paso2/:fecha/:tipoId', component: ReservaPaso2Component},
-  { path: 'reserva/paso3/:espe/:fecha', component: ReservaPaso3Component}
+  { path: 'reserva/paso3/:espe/:fecha', component: ReservaPaso3Component},
+  {path: 'datoscliente', component: ReservaPaso5Component}
 
 
   //implementado guard

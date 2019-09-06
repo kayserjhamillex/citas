@@ -4,4 +4,5 @@ export class Doctor {
     FullName:string;
     CMP:string;
     IdSecretaria:number;
+    doctorimagen: string;
 }

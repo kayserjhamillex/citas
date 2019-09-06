@@ -70,7 +70,7 @@ checkout(medico: any) {
   this.router.navigate([
     'reserva',
     'paso3',
-    medico.id,
+    medico.IdDoctor,
     this.fechaCita.getTime()
   ])
 }

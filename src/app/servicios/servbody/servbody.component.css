@@ -1,12 +1,28 @@
-h1,h2,h3,h4,h5,h6,p,a
+.servicios
+{
+    margin: 0,0,0,0;
+}
+h2
 {
     text-align: center;
 }
+.datos,
+.imagen
+{
+    width: 50%;
+    margin: auto;
+    float: left;
+
+}
+/* h1,h2,h3,h4,h5,h6,p,a
+{
+    text-align: center;
+} */
 /* .marco
 {
     border: solid 1px black;
 } */
-.imgespecialidad, .imgdoctor
+/* .imgespecialidad, .imgdoctor
 {
     width: 100%;
     border-radius: 100%;
@@ -46,7 +62,7 @@ float: left;
 .imgservicio
 {
     width: 100%;
-}
+} */
 /* .separador
 {
     border: 2px solid black;

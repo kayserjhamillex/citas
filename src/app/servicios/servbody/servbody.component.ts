@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClinicaService } from 'src/app/clinica.service';
 
 @Component({
   selector: 'app-servbody',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servbody.component.css']
 })
 export class ServbodyComponent implements OnInit {
-
-  constructor() { }
+  servicios: any[];
+  constructor(
+    private clinicaService: ClinicaService,
+  ) { }
 
   ngOnInit() {
+    this.servicios=this.clinicaService.ObtenerServicio();
   }
 
 }

@@ -4,125 +4,300 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ClinicaService {
+serviciosclinica = 
+[
+  {
+    IdServicio:1,
+    Name:'LaboratorioClinico',
+    descripcion:'Nuestro equipo multidisciplinario, formado por el médico patólogo clínico o analista clínico, profesionales del laboratorio y técnicos en análisis clínicos, analizan muestras biológicas humanas que contribuyen al estudio, prevención, diagnóstico y tratamiento de las enfermedades.',
+    servimagen:'https://irp-cdn.multiscreensite.com/e4ccdf67/MOBILE/jpg/005.jpg'},
+  {
+    IdServicio:2,
+    Name:'Radiografia',
+    descripcion:'son un tipo de radiación llamada ondas electromagnéticas. Las imágenes de rayos X muestran el interior de su cuerpo en diferentes tonos de blanco y negro. Esto es debido a que diferentes tejidos absorben diferentes cantidades de radiación. El calcio en los huesos absorbe la mayoría de los rayos X, por lo que los huesos se ven blancos. La grasa y otros tejidos blandos absorben menos, y se ven de color gris. El aire absorbe la menor cantidad, por lo que los pulmones se ven negros.',
+    servimagen:'http://kayserjhamillex.com/wp-content/uploads/2019/07/tomografia.jpg'},
+  {
+    IdServicio:3,
+    Name:'Ecografia',
+    descripcion:'Es una técnica de exploración de los órganos internos del cuerpo que consiste en registrar el eco de ondas electromagnéticas o acústicas enviadas hacia el lugar que se examina. Este procedimiento de diagnóstico emplea el ultrasonido para crear imágenes tridimensionales, con la finalidad de visualizar órganos para diagnósticos exactos.',
+    servimagen:'http://kayserjhamillex.com/wp-content/uploads/2019/07/ecografia.jpg'},
+  {
+    IdServicio:4,
+    Name:'Farmacia',
+    descripcion:'Es el servicio que brinda atención durante las 24 horas del día para la dispensación de productos químicos farmacéuticos.',
+    servimagen:'https://i1.wp.com/umetonline.com/wp-content/uploads/2019/02/03-farmacia.jpg?resize=1170%2C750&ssl=1'},
+  {
+    IdServicio:5,
+    Name:'Emergencia',
+    descripcion:'El área de Emergencias brinda una buena e inmediata atención para restablecer la salud del paciente. Nuestro staff de médicos emergencistas y personal de enfermería cuenta con amplia experiencia y  la convicción de brindar la mejor atención a los pacientes, con el mayor compromiso ético y profesional para solucionar los problemas urgentes de salud.',
+    servimagen:'https://thumbs.dreamstime.com/b/m%C3%A9dicos-com-mulher-na-marquesa-do-hospital-na-emerg%C3%AAncia-63738304.jpg'},
+  {
+    IdServicio:6,
+    Name:'Hospitalizacion',
+    descripcion:'Nuestro objetivo es prestar una atención médica integral a aquellos pacientes adultos y pediátricos que se hospitalizan por una patología de baja o mediana complejidad, tanto de causa médica como quirúrgica. Cumpliendo estándares exigentes de calidad técnica y profesional, el servicio de Hospitalización se lleva a cabo bajo el sello de servir a la persona enferma, con un trato humano y digno.',
+    servimagen:'https://image.freepik.com/foto-gratis/mujer-hospitalizada-doctores_13339-88558.jpg'},
+]
 especialidad = 
 [
   {
     IdEspecialidad:1,
     Name:'Medicina General', 
     cost:50,
-    descripcion:'La medicina general constituye el primer nivel de atención médica. El médico general es un profesional capacitado para diagnosticar y manejar diferentes patologías comunes y derivar al especialista indicado cuando corresponda.'
+    descripcion:'La medicina general constituye el primer nivel de atención médica. El médico general es un profesional capacitado para diagnosticar y manejar diferentes patologías comunes y derivar al especialista indicado cuando corresponda.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/medicina-general-circle.jpg"
   },
   {
     IdEspecialidad:2,
     Name:'Neumología', 
     cost:150,
-    descripcion:'Es la especialidad médica que se encarga del estudio del sistema respiratorio, también conocida como Neumonología, Pulmonología y Medicina respiratoria. '
+    descripcion:'Es la especialidad médica que se encarga del estudio del sistema respiratorio, también conocida como Neumonología, Pulmonología y Medicina respiratoria. ',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/neumologia-circle.jpg"
   },
   {
     IdEspecialidad:3,
     Name:'Cardiología', 
     cost:80,
-    descripcion:'Es la rama de la medicina interna, escindida de "pulmón y corazón," se ocupa de las afecciones del corazón y del aparato circulatorio.'
+    descripcion:'Es la rama de la medicina interna, escindida de "pulmón y corazón," se ocupa de las afecciones del corazón y del aparato circulatorio.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/cardiologia-circle.jpg"
   },
   {
     IdEspecialidad:4,
     Name:'Geriatría',
     cost:90,
-    descripcion:'Los geriatras son médicos expertos en el cuidado de los adultos mayores, de la misma manera que los pediatras lo son de los niños. Tienen especial conocimiento de enfermedades que comúnmente aquejan a los ancianos.'
+    descripcion:'Los geriatras son médicos expertos en el cuidado de los adultos mayores, de la misma manera que los pediatras lo son de los niños. Tienen especial conocimiento de enfermedades que comúnmente aquejan a los ancianos.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/geriatria-circle.jpg"
   },
   {
     IdEspecialidad:5,
     Name:'Dermatología', 
     cost:120,
-    descripcion:'La dermatología es la especialidad de la medicina centrada en las enfermedades y en las funciones de la piel (el órgano más extenso del cuerpo humano'
+    descripcion:'La dermatología es la especialidad de la medicina centrada en las enfermedades y en las funciones de la piel (el órgano más extenso del cuerpo humano',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/dermatologia-circle.jpg"
   },
   {
     IdEspecialidad:6,
     Name:'Ginecología', 
     cost:40,
-    descripcion:'La ginecología es la especialidad de la medicina dedicada al cuidado del sistema reproductor femenino. Los ginecólogos, por lo tanto, son los especialistas que atienden las cuestiones vinculadas al útero, la vagina y los ovarios.'
+    descripcion:'La ginecología es la especialidad de la medicina dedicada al cuidado del sistema reproductor femenino. Los ginecólogos, por lo tanto, son los especialistas que atienden las cuestiones vinculadas al útero, la vagina y los ovarios.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/ginecologia-circle.jpg"
   },
   {
     IdEspecialidad:7,
     Name:'Reumatología', 
     cost:70,
-    descripcion:'La Reumatología es la especialidad médica que se encarga de prevenir, diagnosticar y tratar las enfermedades musculo esqueléticas  y autoinmunes sistémicas. Se trata de una de las especialidades que más avances en diagnóstico y tratamiento ha experimentado en los últimos años.'
+    descripcion:'La Reumatología es la especialidad médica que se encarga de prevenir, diagnosticar y tratar las enfermedades musculo esqueléticas  y autoinmunes sistémicas. Se trata de una de las especialidades que más avances en diagnóstico y tratamiento ha experimentado en los últimos años.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/reumatologia-circle.jpg"
   },
   {
     IdEspecialidad:8,
     Name:'Medicina Interna', 
     cost:100,
-    descripcion:'La Medicina Interna es una especialidad médica que se dedica al estudio, diagnóstico y tratamiento de las enfermedades propias del adulto.'
+    descripcion:'La Medicina Interna es una especialidad médica que se dedica al estudio, diagnóstico y tratamiento de las enfermedades propias del adulto.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/medicinainterna-circle.jpg"
   },
   {
     IdEspecialidad:9,
     Name:'Endocrinología', 
     cost:80,
-    descripcion:'Un endocrinólogo es un médico especializado en las enfermedades de las hormonas, del metabolismo y en los problemas nutricionales.'
+    descripcion:'Un endocrinólogo es un médico especializado en las enfermedades de las hormonas, del metabolismo y en los problemas nutricionales.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/endocrinologia-circle.jpg"
   },
   {
     IdEspecialidad:10,
     Name:'Traumatología', 
     cost:90,
-    descripcion:'La Traumatología es la especialidad médica que se encarga del cuidado, estudio y rehabilitación de la forma y función de las extremidades, columna y estructuras asociadas. Es una especialidad que abarca más allá del campo de lesiones traumáticas; contempla también el estudio de patologías congénitas.'
+    descripcion:'La Traumatología es la especialidad médica que se encarga del cuidado, estudio y rehabilitación de la forma y función de las extremidades, columna y estructuras asociadas. Es una especialidad que abarca más allá del campo de lesiones traumáticas; contempla también el estudio de patologías congénitas.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/traumatologia-circle.jpg"
   },
   {
     IdEspecialidad:11,
     Name:'Oftalmología', 
     cost:70,
-    descripcion:'Es la especialidad médica que se encarga del tratamiento de las enfermedades de los ojos. Esta disciplina también tiene aplicación en la veterinaria ya que los seres humanos y los animales suelen compartir, en este caso, procesos patológicos similares.'
+    descripcion:'Es la especialidad médica que se encarga del tratamiento de las enfermedades de los ojos. Esta disciplina también tiene aplicación en la veterinaria ya que los seres humanos y los animales suelen compartir, en este caso, procesos patológicos similares.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/oftalmologia-circle.jpg"
   },
   {
     IdEspecialidad:12,
     Name:'Otorrinolaringología', 
     cost:80,
-    descripcion:'Es la especialidad médica y quirúrgica que se encarga de la prevención, diagnóstico y tratamiento de las enfermedades del oído, las vías aéreo-respiratorias superiores y las zonas próximas de la cara y el cuello.'
+    descripcion:'Es la especialidad médica y quirúrgica que se encarga de la prevención, diagnóstico y tratamiento de las enfermedades del oído, las vías aéreo-respiratorias superiores y las zonas próximas de la cara y el cuello.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/otorrinolaringologia-circle.jpg"
   },
   {
     IdEspecialidad:13,
     Name:'Cirugia General', 
     cost:140,
-    descripcion:'La cirugía general es la especialidad de la medicina que tiene competencia en el diagnóstico y tratamiento de las patologías que se resuelven mediante procedimientos quirúrgicos o potencialmente quirúrgicos, tanto electivos como de urgencia, de origen benigno, inflamatorio, traumático o neoplásico en los siguientes aparatos, sistemas y áreas anatómicas: aparato digestivo, pared abdominal, sistema endocrino, mama, piel y partes blandas, retroperitoneo y afecciones externas de la cabeza y el cuello.'
+    descripcion:'La cirugía general es la especialidad de la medicina que tiene competencia en el diagnóstico y tratamiento de las patologías que se resuelven mediante procedimientos quirúrgicos o potencialmente quirúrgicos, tanto electivos como de urgencia, de origen benigno, inflamatorio, traumático o neoplásico en los siguientes aparatos, sistemas y áreas anatómicas: aparato digestivo, pared abdominal, sistema endocrino, mama, piel y partes blandas, retroperitoneo y afecciones externas de la cabeza y el cuello.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/cirujia-general-circle.jpg"
   },
   {
     IdEspecialidad:14,
     Name:'Gastroenterología', 
     cost:85,
-    descripcion:'Un gastroenterólogo es un médico con capacitación y experiencia dedicadas en el manejo de enfermedades del tracto gastrointestinal y el hígado.'
+    descripcion:'Un gastroenterólogo es un médico con capacitación y experiencia dedicadas en el manejo de enfermedades del tracto gastrointestinal y el hígado.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/Gastroenterologia-circle.jpg"
   },
   {
     IdEspecialidad:15,
     Name:'Urologia', 
     cost:50,
-    descripcion:'La Urología es una especialidad médico-quirúrgica que se ocupa del estudio, diagnóstico y tratamiento de las afecciones médicas y quirúrgicas del aparato urinario y retroperitoneo, en ambos sexos, y del aparato genital masculino, sin límite de edad, motivadas por padecimientos congénitos traumáticos, sépticos, metabólicos, obstructivos y oncológicos.'
+    descripcion:'La Urología es una especialidad médico-quirúrgica que se ocupa del estudio, diagnóstico y tratamiento de las afecciones médicas y quirúrgicas del aparato urinario y retroperitoneo, en ambos sexos, y del aparato genital masculino, sin límite de edad, motivadas por padecimientos congénitos traumáticos, sépticos, metabólicos, obstructivos y oncológicos.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/urologia1-circle.jpg"
   },
   {
     IdEspecialidad:16,
     Name:'Neurología', 
     cost:180,
-    descripcion:'La Neurología se ocupa de forma integral de la asistencia médica al enfermo neurológico, de la docencia en todas las materias que afectan al sistema nervioso y de la investigación, tanto clínica como básica, dentro de su ámbito.'
+    descripcion:'La Neurología se ocupa de forma integral de la asistencia médica al enfermo neurológico, de la docencia en todas las materias que afectan al sistema nervioso y de la investigación, tanto clínica como básica, dentro de su ámbito.',
+    espeimagen: "http://kayserjhamillex.com/wp-content/uploads/bb-plugin/cache/neurologia-circle.jpg"
   }
 ];
 doctor = 
 [
-  {IdDoctor:1, FullName:'Medico general1',IdEspecialidad:1,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:2, FullName:'Neurologo',IdEspecialidad:2,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:3, FullName:'Cardiologo',IdEspecialidad:3,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:4, FullName:'Geriatra',IdEspecialidad:4,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:5, FullName:'Dermatologo',IdEspecialidad:5,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:6, FullName:'Ginecologa',IdEspecialidad:6,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:7, FullName:'Reumatologa',IdEspecialidad:7,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:8, FullName:'Internista',IdEspecialidad:8,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:9, FullName:'Endocrinologa',IdEspecialidad:9,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:10, FullName:'Traumatologo',IdEspecialidad:10,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:11, FullName:'Oftalmologo',IdEspecialidad:11,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:12, FullName:'Otorrinolaringologo',IdEspecialidad:12,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:13, FullName:'Cirujano',IdEspecialidad:13,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:14, FullName:'Gastroenterologo',IdEspecialidad:14,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:15, FullName:'Urologo',IdEspecialidad:15,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:16, FullName:'Neurologo',IdEspecialidad:16,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:17, FullName:'Medico general2',IdEspecialidad:1,CMP:9854325,IdSecretaria:1},
-  {IdDoctor:18, FullName:'Medico general3',IdEspecialidad:1,CMP:9854325,IdSecretaria:1}
+  {
+    IdDoctor:1, 
+    FullName:'Medico general1',
+    IdEspecialidad:1,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:2, 
+    FullName:'Neurologo',
+    IdEspecialidad:2,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:3, 
+    FullName:'Cardiologo',
+    IdEspecialidad:3,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:4, 
+    FullName:'Geriatra',
+    IdEspecialidad:4,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:5, 
+    FullName:'Dermatologo',
+    IdEspecialidad:5,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:6, 
+    FullName:'Ginecologa',
+    IdEspecialidad:6,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:7, 
+    FullName:'Reumatologa',
+    IdEspecialidad:7,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:8, 
+    FullName:'Internista',
+    IdEspecialidad:8,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:9, 
+    FullName:'Endocrinologa',
+    IdEspecialidad:9,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:10, 
+    FullName:'Traumatologo',
+    IdEspecialidad:10,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:11, 
+    FullName:'Oftalmologo',
+    IdEspecialidad:11,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:12, 
+    FullName:'Otorrinolaringologo',
+    IdEspecialidad:12,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:13, 
+    FullName:'Cirujano',
+    IdEspecialidad:13,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:14, 
+    FullName:'Gastroenterologo',
+    IdEspecialidad:14,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:15, 
+    FullName:'Urologo',
+    IdEspecialidad:15,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:16, 
+    FullName:'Neurologo',
+    IdEspecialidad:16,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:17, 
+    FullName:'Medico general2',
+    IdEspecialidad:1,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  },
+  {
+    IdDoctor:18, 
+    FullName:'Medico general3',
+    IdEspecialidad:1,
+    CMP:9854325,
+    IdSecretaria:1,
+    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  }
 ];
 hora = 
 [
@@ -240,7 +415,10 @@ cita =
   ObtenerEspecialidad()
   {
     return this.especialidad;
-      
+  }
+  ObtenerServicio()
+  {
+    return this.serviciosclinica;
   }
   ObtenerDoctor(){
     return this.doctor;
@@ -254,8 +432,4 @@ cita =
   nuevaCita(citas) {
     this.cita.push(citas);
   }
-
-
-
-
 }

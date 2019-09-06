@@ -3,4 +3,5 @@ export class Especialidad {
     Name:string;
     cost:number;
     descripcion: string;
+    espeimagen: string;
 }

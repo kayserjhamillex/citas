@@ -36,7 +36,7 @@ export class ReservaPaso3Component implements OnInit {
       {
         numero:9,
          fechaCita: new Date(+this.fechaCita).toISOString().substring(0,10),
-         tipo:this.doctor.id
+         tipo:this.doctor.IdDoctor
       }
     )
     this.pago = true;

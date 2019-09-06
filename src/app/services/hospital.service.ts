@@ -6,6 +6,7 @@ import { Doctor } from './doctor.model';
 import { Secretaria } from './secretaria.model';
 import { Paciente } from './paciente.model';
 import { Cita } from './cita.model';
+import { Serviciosclinica } from './serviciosclinica.mode';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,6 @@ export class HospitalService {
   formData5:Secretaria;
   formData6:Paciente;
   formData7:Cita;
+  formData8:Serviciosclinica;
   constructor() { }
 }

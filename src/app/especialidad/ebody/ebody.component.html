@@ -11,7 +11,7 @@
             <br>
             <div class="col-12 col-sm-4 col-md-3 cajas" *ngFor="let tipo of Especialidad; let i = index">
                 <div class="col-12 imgespecialidad w-100">
-                    <img src="https://mdbootstrap.com/img/logo/mdb192x192.jpg" class="imagenespecialidad w-100 rounded-circle">
+                    <img [src]="tipo.espeimagen" class="imagenespecialidad w-100 rounded-circle">
                 </div>
                 <br>
                 <div class="col-12">
