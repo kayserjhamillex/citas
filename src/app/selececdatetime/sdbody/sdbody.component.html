@@ -1,0 +1,54 @@
+<br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 nombre text-center">
+            <h2>
+                Especialidad de {{objeto.Name}}
+            </h2>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="col-12 col-sm-6 cajas">
+            <p class="text-justify">
+                *elija la fecha., luego elija el doctor y por ultimo el horario mas axxecible para usted
+            </p>
+            <div class="col-12 sacarcita">
+                <div class="fecha text-center">
+                    <input type="date">
+                </div>
+                <br>
+                <div class="doctoresacargo">
+
+                </div>
+                <br>
+                <div class="horariodeldoctor">
+
+                </div>
+                <br>
+                <div class="continuar text-center">
+                    <button type="submit" class="btn btn-primary continuar">
+                        <a class="continuar" [routerLink]="['/validacioncliente']">
+                            Continuar
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 cajas">
+            <div class="col-12 informacion border border-primary">
+                <div class="col-12 text-center precio">
+                    <h3 class="text-primary">
+                        Precio de la Consulta:  {{objeto.cost}}
+                    </h3>
+                </div>
+                <div class="col-12 text-justify descripcion">
+                    <h4 class="text-info">
+                        {{objeto.descripcion}}
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

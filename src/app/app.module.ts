@@ -53,6 +53,9 @@ import { ServheaderComponent } from './servicios/servheader/servheader.component
 import { DoctoresComponent } from './doctores/doctores.component';
 import { DocbodyComponent } from './doctores/docbody/docbody.component';
 import { DocheaderComponent } from './doctores/docheader/docheader.component';
+import { ValidarusuarioComponent } from './validarusuario/validarusuario.component';
+import { ValidbodyComponent } from './validarusuario/validbody/validbody.component';
+import { ValidheaderComponent } from './validarusuario/validheader/validheader.component';
 // import { AuthGuardService } from './services/auth-guard.service';
 
 
@@ -133,7 +136,10 @@ const config = new AuthServiceConfig([
     ServheaderComponent,
     DoctoresComponent,
     DocbodyComponent,
-    DocheaderComponent
+    DocheaderComponent,
+    ValidarusuarioComponent,
+    ValidbodyComponent,
+    ValidheaderComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,68 @@
+<br>
+<br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 text-center">
+            <h1>
+                Por Favor Rellenar los Datos Solicitados
+            </h1>
+        </div>
+        <div class="col-10">
+            <form [formGroup]="DatosForm" (ngSubmit)="datospaciente(DatosForm.value)">
+                <div class="col-12">
+                    <button type="submit" class="col-6 btn btn-primary" (click)="esestrangero()">
+                        es extrangero?
+                    </button>
+                    <button type="submit" class="col-6 btn btn-primary" (click)="noestrangero()">
+                        no soy extrangero
+                    </button>
+                </div>
+                <br>
+                <br>
+                <div *ngIf="!extrangero">
+                    <label for="dni">
+                        DNI
+                    </label>
+                    <br>
+                    <input type="text" name="DNI" formControlName="DNI">
+                </div>
+                <div *ngIf="extrangero">
+                    <label for="extrangero">
+                        Carnet de Extrangeria
+                    </label>
+                    <br>
+                    <input type="text" name="Extrangeria" formControlName="Extrangeria">
+                </div>
+                <br>
+                <div>
+                    <label for="fullname">
+                        Nombre Completo: 
+                    </label>
+                    <br>
+                    <input type="text" name="fullname" formControlName="FullName">
+                    <br>
+                    <span class="rojo" *ngIf="FullName.invalid && FullName.errors.required">
+                        *nombre es requerido
+                    </span>
+                </div>
+                <br>
+                <div>
+                    <label for="nacimiento">
+                        Fecha de Nacimiento
+                    </label>
+                    <br>
+                    <input type="date" name="nacimiento" formControlName="FNacimiento">
+                    <br>
+                    <span class="rojo" *ngIf="FNacimiento.invalid && FNacimiento.errors.required">
+                        *fecha de nacimiento requerido
+                    </span>
+                </div>
+                <div class="boton">
+                    <input type="submit" value="Guardar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>

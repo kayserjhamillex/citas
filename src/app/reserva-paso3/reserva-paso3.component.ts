@@ -12,7 +12,7 @@ export class ReservaPaso3Component implements OnInit {
   doctor;
   pago = false;
   fechaCita;
-  constructor( 
+  constructor(
     private route: ActivatedRoute,
     private clinicaService :ClinicaService,) { }
 

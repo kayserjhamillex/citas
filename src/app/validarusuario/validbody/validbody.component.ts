@@ -3,11 +3,11 @@ import { AuthService,SocialUser } from "angularx-social-login";
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-reserva-paso5',
-  templateUrl: './reserva-paso5.component.html',
-  styleUrls: ['./reserva-paso5.component.css']
+  selector: 'app-validbody',
+  templateUrl: './validbody.component.html',
+  styleUrls: ['./validbody.component.css']
 })
-export class ReservaPaso5Component implements OnInit {
+export class ValidbodyComponent implements OnInit {
   public usuario: SocialUser;
   public loggeIn:boolean;
   DatosForm: FormGroup;
@@ -18,7 +18,7 @@ export class ReservaPaso5Component implements OnInit {
   ) { }
 
   ngOnInit() {
-      this.authService.authState.subscribe((usuario)=>{
+    this.authService.authState.subscribe((usuario)=>{
       this.usuario=usuario;
       this.loggeIn=(usuario != null);
     })
@@ -35,7 +35,8 @@ export class ReservaPaso5Component implements OnInit {
       [Validators.required,
       Validators.minLength(20),
       Validators.maxLength(120)]),
-      FNacimiento: new FormControl('dd/MM/yyyy',[Validators.required]),
+      FNacimiento: new FormControl('dd/MM/yyyy',
+      [Validators.required]),
     });
   }
   datospaciente(datos: any){

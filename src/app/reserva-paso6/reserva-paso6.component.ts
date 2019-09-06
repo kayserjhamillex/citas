@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClinicaService } from '../clinica.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reserva-paso6',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reserva-paso6.component.css']
 })
 export class ReservaPaso6Component implements OnInit {
-
-  constructor() { }
+  especialidad: any[];
+  constructor(
+    private clinicaService: ClinicaService,
+    private ruoter: Router,
+    
+    
+    ) { }
 
   ngOnInit() {
+    this.especialidad=this.clinicaService.ObtenerEspecialidad();
   }
+  // probando
+  
+  checkout(identificador: any){
+    this.ruoter.navigate([
+      'elegirfechayhora',
+      identificador.IdEspecialidad
+    ])
+  }
+
 
 }

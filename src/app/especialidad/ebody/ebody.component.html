@@ -1,4 +1,51 @@
 <div class="container">
+    <form class="row justify-content-md-center">
+        <div class="row justify-content-md-center">
+            <div class="col-12">
+                <h1>
+                    Especialidades
+                </h1>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-12 col-sm-4 col-md-3 cajas" *ngFor="let tipo of especialidad">
+                <div class="col-12 imgespecialidad w-100">
+                    <img [src]="tipo.espeimagen" class="imagenespecialidad w-100 rounded-circle">
+                </div>
+                <br>
+                <div class="col-12 text-center nombre">
+                    <h5>
+                        {{tipo.Name}}
+                    </h5>
+                </div>
+                <div class="col-12 text-center precio">
+                    <h6>
+                        Precio: S/.{{tipo.cost}}.00
+                    </h6>
+                </div>
+                <div class="col-12 text-justify descripcion">
+                    <p>
+                        {{tipo.descripcion}}
+                    </p>
+                </div>
+                <button class="btn btn-primary btn-center" type="button" (click)="checkout(tipo)">
+                    Sacar Cita
+                </button>
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+        </div>
+    </form>
+    <br>
+    <br>
+</div>
+
+
+
+<!-- <div class="container">
     <form class="row justify-content-md-center" [formGroup]="reservaForm" (ngSubmit)="buscarDoctorDisponible(reservaForm.value)">
         <div class="row justify-content-md-center">
             <div class="col-12">
@@ -54,7 +101,7 @@
     </form>
     <br>
     <br>
-</div>
+</div> -->
 <!-- <div class="container">
     <div class="row justify-content-md-center">
         <div class="col-12 col-md-4 text-center">
