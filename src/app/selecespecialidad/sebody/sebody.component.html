@@ -9,7 +9,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <select (change)="capturar()" class="visible"  (ngModel)="opcionSeleccionado">
+            <select (change)="capturar()" class="visible">
                 <!-- <option value="value0">-Seleccione Especialidad-</option> -->
                 <option *ngFor="let dato of especialidad">
                     {{dato}}

@@ -29,7 +29,7 @@ export class ReservaPaso3Component implements OnInit {
       }
     }
   }
-  pagar() {
+pagar() {
     //coneccion a la pasarela de pago
     //actualizar el backend
     this.clinicaService.nuevaCita(

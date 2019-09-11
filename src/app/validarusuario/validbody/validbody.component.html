@@ -8,7 +8,8 @@
             </h1>
         </div>
         <div class="col-10">
-            <form [formGroup]="DatosForm" (ngSubmit)="datospaciente(DatosForm.value)">
+            <form [formGroup]="DatosForm" (ngSubmit)="validacionusuario(DatosForm.value)">
+                    <!-- <form [formGroup]="DatosForm" (ngSubmit)="datospaciente(DatosForm.value)"> -->
                 <div class="col-12">
                     <button type="submit" class="col-6 btn btn-primary" (click)="esestrangero()">
                         es extrangero?
@@ -58,7 +59,8 @@
                     </span>
                 </div>
                 <div class="boton">
-                    <input type="submit" value="Guardar">
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <!-- <input type="submit" value="Guardar"> -->
                 </div>
             </form>
         </div>

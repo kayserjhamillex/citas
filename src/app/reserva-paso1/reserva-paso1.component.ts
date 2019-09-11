@@ -18,7 +18,7 @@ export class ReservaPaso1Component implements OnInit {
   constructor(
     private clinicaService: ClinicaService,
     //importacion de formulario angular
-    private formBuilder: FormBuilder,
+    private datex: FormBuilder,
     //importacion para ruteo
     private ruoter: Router,
     ) { }
@@ -26,7 +26,8 @@ export class ReservaPaso1Component implements OnInit {
   ngOnInit() {
     this.Especialidad=this.clinicaService.ObtenerEspecialidad();
     this.Doctor=this.clinicaService.ObtenerDoctor();
-    this.reservaForm=this.formBuilder.group(
+    //creacion del 
+    this.reservaForm=this.datex.group(
       {
         elIndice:'',
         dia:''

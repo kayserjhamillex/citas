@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService,SocialUser } from "angularx-social-login";
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { ClinicaService } from 'src/app/clinica.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-validbody',
@@ -12,9 +14,15 @@ export class ValidbodyComponent implements OnInit {
   public loggeIn:boolean;
   DatosForm: FormGroup;
   extrangero=false;
+  dni;
+  caresxt;
+  fecha:Date;
+  name;
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
+    private clinicaService :ClinicaService,
+    private ruoter: Router,
   ) { }
 
   ngOnInit() {
@@ -54,5 +62,26 @@ export class ValidbodyComponent implements OnInit {
   }
   get FNacimiento() {
     return this.DatosForm.get('FNacimiento');
+  }
+validacionusuario(cliente: any)
+{
+this.dni=cliente.DNI;
+this.caresxt=cliente.Extrangeria;
+this.fecha=new Date(cliente.FNacimiento);
+this.name= cliente.FullName;
+// console.log(this.dni);
+// console.log(this.caresxt);
+// console.log(this.fecha);
+// console.log(this.name);
+
+  this.ruoter.navigate([
+    'pago',
+    this.dni,
+    this.caresxt,
+    this.fecha.getTime(),
+    this.name,
+    // datos.index
+    // datos.tipo
+  ]);
   }
 }

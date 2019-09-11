@@ -13,40 +13,79 @@
         <div class="col-12 col-sm-6 cajas">
             <p class="text-justify">
                 *elija la fecha., luego elija el doctor y por ultimo el horario mas axxecible para usted
+                <br>
+                * la reserva de  la cita debe de ser para la semana siguiente
             </p>
-            <div class="col-12 sacarcita">
-                <div class="fecha text-center">
-                    <input type="date">
+            <form class="row justify-content-md-center" [formGroup]="obtenerdatos" (ngSubmit)="prueba(obtenerdatos.value)">
+                <div class="col-12 fechaelegida">
+                    <div class="fecha text-center">
+                        <h6>Por favor elija la fecha de su cita</h6>
+                        <input type="date" formControlName="dia">
+                    </div>
                 </div>
                 <br>
-                <div class="doctoresacargo">
-
+                <div class="col-12 doctoresacargo">
+                    <h6 class="titulo text-center">
+                        Doctor(es) Encargado(s)
+                    </h6>
+                    <div class="doctores col" *ngFor="let especialista of doctordisponible">
+                        <div class="doctor col text-center">
+                            <div class="nombre">
+                                <h4>
+                                    Nombres y Apellidos: {{especialista.FullName}}
+                                </h4>
+                            </div>
+                            <div class="codigomp">
+                                <h5>
+                                    CMP: {{especialista.CMP}}
+                                </h5>
+                            </div>
+                            <div>
+                                <input class="input" id="escondete" type="text" [value]="especialista.IdDoctor" formControlName="medico">
+                                <!-- <input class="invisible" type="number" [value]="especialista.IdDoctor" formControlName="medico"> -->
+                            </div>
+                            <div class="elegirdoctor">
+                                <button type="button" (click)="prueba(obtenerdatos.value)">Elegir</button>
+                                <!-- <button [type]="submit" [value]="especialista.IdDoctor"> -->
+                                <!-- <button type="submit" (click)="activado=!activado"> -->
+                                    <!-- Elegir
+                                </button> -->
+                            </div>
+                            <div class=" col-12 horariodeldoctor" *ngIf="activado">
+                                <h6 class="text-center">
+                                    Activado
+                                    <!-- Horario de disponibilidad del doctor en la fecha elegida -->
+                                </h6>
+                            </div>                       
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div class="horariodeldoctor">
-
-                </div>
-                <br>
-                <div class="continuar text-center">
-                    <button type="submit" class="btn btn-primary continuar">
-                        <a class="continuar" [routerLink]="['/validacioncliente']">
-                            Continuar
-                        </a>
-                    </button>
-                </div>
+            </form>
+            <br>
+            <br>
+            <div class="continuar text-center">
+                <button type="submit" class="btn btn-primary continuar">
+                    <a class="continuar" [routerLink]="['/validacioncliente']">
+                        Continuar
+                    </a>
+                </button>
             </div>
         </div>
         <div class="col-12 col-sm-6 cajas">
             <div class="col-12 informacion border border-primary">
                 <div class="col-12 text-center precio">
                     <h3 class="text-primary">
-                        Precio de la Consulta:  {{objeto.cost}}
+                        Precio de la Consulta:  S/.{{objeto.cost}}.00
                     </h3>
                 </div>
                 <div class="col-12 text-justify descripcion">
                     <h4 class="text-info">
                         {{objeto.descripcion}}
                     </h4>
+                </div>
+                <br>
+                <div class="col-12 text-center imagen">
+                    <img [src]="objeto.espeimagen" class="imagenespecialidad w-100">
                 </div>
             </div>
         </div>
