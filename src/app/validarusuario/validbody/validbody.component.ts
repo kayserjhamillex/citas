@@ -73,7 +73,16 @@ this.name= cliente.FullName;
 // console.log(this.caresxt);
 // console.log(this.fecha);
 // console.log(this.name);
-
+// this.clinicaService.NuevoPaciente
+//     (
+//       {
+//         IdPaciente: 9,
+//         DNI:this.dni,
+//         CarnetExtrangeria:this.carextr,
+//         FullName:this.fullname,
+//         FechaNacimiento:new Date(+this.fechanacimiento).toISOString().substring(0,10),
+//       }
+//     )
   this.ruoter.navigate([
     'pago',
     this.dni,

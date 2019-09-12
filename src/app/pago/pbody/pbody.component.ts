@@ -16,7 +16,6 @@ fechanacimiento;
   constructor(
     private route: ActivatedRoute,
     private clinicaService :ClinicaService,
-    // private router: Router,
     private ruoter: Router,
   ) { }
 

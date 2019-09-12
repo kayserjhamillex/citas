@@ -11,10 +11,10 @@
             <form [formGroup]="DatosForm" (ngSubmit)="validacionusuario(DatosForm.value)">
                     <!-- <form [formGroup]="DatosForm" (ngSubmit)="datospaciente(DatosForm.value)"> -->
                 <div class="col-12">
-                    <button type="submit" class="col-6 btn btn-primary" (click)="esestrangero()">
-                        es extrangero?
+                    <button type="button" class="col-6 btn btn-primary" (click)="esestrangero()">
+                        ¿es extrangero?
                     </button>
-                    <button type="submit" class="col-6 btn btn-primary" (click)="noestrangero()">
+                    <button type="button" class="col-6 btn btn-primary" (click)="noestrangero()">
                         no soy extrangero
                     </button>
                 </div>
@@ -25,14 +25,14 @@
                         DNI
                     </label>
                     <br>
-                    <input type="text" name="DNI" formControlName="DNI">
+                    <input type="text" name="DNI" formControlName="DNI" maxlength="8">
                 </div>
                 <div *ngIf="extrangero">
                     <label for="extrangero">
                         Carnet de Extrangeria
                     </label>
                     <br>
-                    <input type="text" name="Extrangeria" formControlName="Extrangeria">
+                    <input type="text" name="Extrangeria" formControlName="Extrangeria" maxlength="12">
                 </div>
                 <br>
                 <div>

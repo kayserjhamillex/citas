@@ -2,7 +2,8 @@
     <div class="credit-card-box">
         <div class="flip">
             <div class="front">
-                <div class="chip"></div>
+                <div class="chip">
+                </div>
                 <div class="logo">
                     <svg version="1.1" id="visa" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         width="47.834px" height="47.834px" viewBox="0 0 47.834 47.834" style="enable-background:new 0 0 47.834 47.834;">
@@ -21,18 +22,24 @@
                         </g>
                     </svg>
                 </div>
-                <div class="number"></div>
+                <div class="number">
+                </div>
                 <div class="card-holder">
-                    <label>Card holder</label>
+                    <label>
+                        Nombre Tarjeta
+                    </label>
                     <div></div>
                 </div>
                 <div class="card-expiration-date">
-                    <label>Expires</label>
+                    <label>
+                        Fecha Vencimiento
+                    </label>
                     <div></div>
                 </div>
             </div>
             <div class="back">
-                <div class="strip"></div>
+                <div class="strip">
+                </div>
                 <div class="logo">
                     <svg version="1.1" id="visa" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="47.834px" height="47.834px" viewBox="0 0 47.834 47.834" style="enable-background:new 0 0 47.834 47.834;">
                         <g>
@@ -51,26 +58,35 @@
                     </svg>
                 </div>
                 <div class="ccv">
-                    <label>CCV</label>
-                    <div></div>
+                    <label>
+                        CCV
+                    </label>
+                    <div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <form class="form" autocomplete="off" novalidate>
         <fieldset>
-            <label for="card-number">Número de Tarjeta</label>
+            <label for="card-number">
+                Número de Tarjeta
+            </label>
             <input type="num" id="card-number" class="input-cart-number js-input-cart-number" maxlength="4" />
             <input type="num" id="card-number-1" class="input-cart-number js-input-cart-number" maxlength="4" />
             <input type="num" id="card-number-2" class="input-cart-number js-input-cart-number" maxlength="4" />
             <input type="num" id="card-number-3" class="input-cart-number js-input-cart-number" maxlength="4" />
         </fieldset>
         <fieldset>
-            <label for="card-holder">Nombre Tarjeta</label>
+            <label for="card-holder">
+                Nombre Tarjeta
+            </label>
             <input type="text" id="card-holder" class="js-card-holder" maxlength="30" />
         </fieldset>
         <fieldset class="fieldset-expiration">
-            <label for="card-expiration-month">Fecha de Caducidad</label>
+            <label for="card-expiration-month">
+                Fecha de Caducidad
+            </label>
             <div class="select">
                 <select id="card-expiration-month" class="js-card-expiration-month">
                     <option></option>
@@ -105,10 +121,14 @@
             </div>
         </fieldset>
         <fieldset class="fieldset-ccv">
-            <label for="card-ccv">CCV</label>
+            <label for="card-ccv">
+                CCV
+            </label>
             <input type="text" id="card-ccv" class="js-card-ccv" maxlength="3" />
         </fieldset>
-        <button class="btn" (click)="insertar()">Submit</button>
+        <button class="btn" (click)="insertar()">
+            Submit
+        </button>
     </form>
 </div>
 

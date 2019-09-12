@@ -57,7 +57,9 @@ export class ReservaPaso2Component implements OnInit {
   console.log(todosDoctores);
   let disponibles = [];
   for (const doctor of todosDoctores){
+    //se esta sacando los id del doctor para poder listar los doctores disponibles
     const o = dianodisponible.filter(n => n == doctor.IdDoctor).length;
+    //esta comparando los id en la tabla del doctor
     if (o === 0 && doctor.IdEspecialidad == this.tipo) {
       disponibles.push(doctor);
     }
