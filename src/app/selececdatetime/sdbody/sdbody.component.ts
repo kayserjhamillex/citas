@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+// import { ActivatedRoute, Router } from '@angular/router';
 import { ClinicaService } from 'src/app/clinica.service';
-import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sdbody',
@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./sdbody.component.css']
 })
 export class SdbodyComponent implements OnInit {
+  // [x: string]: any;
   // [x: string]: any;
   espenumber: number;
   objeto;
@@ -24,7 +25,6 @@ export class SdbodyComponent implements OnInit {
   obtenerdatos: FormGroup;
   numbermedico: number;
   reserva: any[];
-  horas: any[];
 
   // CAMBIO DE MAX
   arrayDeMax: any[] = [];
@@ -33,12 +33,17 @@ export class SdbodyComponent implements OnInit {
   // resultados: any[];
   pinshishorario: any[];
   // fechareservada:Date;
+
+  fechadecita;
+  identidaddoctor;
+  identidadhora;
+
   constructor(
     private route: ActivatedRoute,
     private clinicaService: ClinicaService,
     private ruoter: Router,
     // añadiendo el costructor de formularios
-    private datex: FormBuilder
+    private datex: FormBuilder,
   ) {}
 
   ngOnInit() {
@@ -214,24 +219,24 @@ export class SdbodyComponent implements OnInit {
     this.libres=nocoinciden;
     // console.log(nocoinciden);
     console.log(this.libres);
-    this.horas = this.clinicaService.ObtenerHora();
-    console.log(this.horas);
-    for (const prueba of this.libres) {
-      const dato1 = prueba.IdHora;
-      // console.log(dato1);
-      for (const prueba1 of this.horas) {
-        const dato2 = prueba1.Id;
-        // console.log(dato2);
-        if (dato1 == dato2) {
-          console.log("hellouda");
-          this.horalibre = prueba1;
-        }
-      }
-      console.log(this.horalibre);
-      console.log(this.horalibre.name);
+    // this.horas = this.clinicaService.ObtenerHora();
+    // console.log(this.horas);
+    // for (const prueba of this.libres) {
+    //   const dato1 = prueba.IdHora;
+    //   // console.log(dato1);
+    //   for (const prueba1 of this.horas) {
+    //     const dato2 = prueba1.Id;
+    //     // console.log(dato2);
+    //     if (dato1 == dato2) {
+    //       console.log("hellouda");
+    //       this.horalibre = prueba1;
+    //     }
+    //   }
+    //   console.log(this.horalibre);
+    //   console.log(this.horalibre.name);
       
-      // console.log(prueba);
-    }
+    //   // console.log(prueba);
+    // }
     // const prueba1 = this.clinicaService.ObtenerEspecialidad();
     // for (const unaespe of prueba1) {
     //   if (unaespe.IdEspecialidad == this.espenumber) {
@@ -280,13 +285,23 @@ export class SdbodyComponent implements OnInit {
   //     // }
   //     // this.horasaelegir=horarioredisponible;
   //   }
+
+
+
   // para poder completar la reserva se toman los valores respectivos para la reserva
-  // completarcita(identificadores) {
-  // const fechadecita = new Date(identificadores.dia1);
-  //   this.router.navigate([
-  //     'validacioncliente',
-  // identificadores.medico1,
-  // identificadores.cita1,
-  // this.fechadecita.getTime(),
-  //   ])
+  completarcita(docto, fecha, hora) 
+  {
+    this.fechadecita = new Date(fecha.dia);
+    this.identidaddoctor = docto.IdDoctor;
+    this.identidadhora = hora.IdHorario;
+    // console.log(this.fechadecita);
+    // console.log(this.identidaddoctor);
+    // console.log(this.identidadhora);
+    this.ruoter.navigate([
+      'validpacient',
+      docto.IdDoctor,
+      this.fechadecita.getTime(),
+      hora.IdHorario,
+    ]);
+  }
 }

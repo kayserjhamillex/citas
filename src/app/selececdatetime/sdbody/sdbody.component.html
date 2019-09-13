@@ -19,7 +19,9 @@
             <form class="row justify-content-md-center" [formGroup]="obtenerdatos" (ngSubmit)="prueba(obtenerdatos.value)">
                 <div class="col-12 fechaelegida">
                     <div class="fecha text-center">
-                        <h6>Por favor elija la fecha de su cita</h6>
+                        <h6>
+                            Por favor elija la fecha de su cita
+                        </h6>
                         <input type="date" formControlName="dia">
                     </div>
                 </div>
@@ -41,27 +43,19 @@
                                 </h5>
                             </div>
                             <div>
-                                <input class="gg" id="escondete" type="text" [value]="especialista.IdDoctor" formControlName="medico">
-                                <!-- <input class="invisible" type="number" [value]="especialista.IdDoctor" formControlName="medico"> -->
+                                <input class="invisible" id="escondete" type="text" [value]="especialista.IdDoctor" formControlName="medico">
                             </div>
                             <div class="elegirdoctor">
-                                <button type="button" (click)="prueba(obtenerdatos.value,doctordisponible[i],activado=!activado)">Elegir</button>
-                                <!-- <button [type]="submit" [value]="especialista.IdDoctor"> -->
-                                <!-- <button type="submit" (click)="activado=!activado"> -->
-                                    <!-- Elegir
-                                </button> -->
+                                <button type="button" (click)="prueba(obtenerdatos.value,doctordisponible[i],activado=!activado)">
+                                    Elegir
+                                </button>
                             </div>
                             <div class=" col-12 horariodeldoctor" *ngIf="activado">
                                 <div class="horarios col" *ngFor="let hour of libres;let x = index">
-                                    <input class="input" id="escondete" type="text" [value]="hour.IdHorario">
-                                    <div class="mostrarhoras">  
-                                        
-                                    </div>
+                                    <button type="button" class="" [value]="hour.IdHorario" (click)="completarcita(doctordisponible[i],obtenerdatos.value,libres[x])">
+                                        {{hour.IdHora}}
+                                    </button>
                                 </div>
-                                <h6 class="text-center">
-                                    Activado
-                                    <!-- Horario de disponibilidad del doctor en la fecha elegida -->
-                                </h6>
                             </div>                       
                         </div>
                     </div>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService,SocialUser } from "angularx-social-login";
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ClinicaService } from 'src/app/clinica.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-validbody',
@@ -16,16 +16,23 @@ export class ValidbodyComponent implements OnInit {
   extrangero=false;
   dni;
   caresxt;
-  fecha:Date;
+  fecha1:Date;
   name;
+  doctor;
+  fecha;
+  horario;
   constructor(
     private authService: AuthService,
     private formBuilder: FormBuilder,
     private clinicaService :ClinicaService,
     private ruoter: Router,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
+    this.doctor = this.route.snapshot.params['iddoctor'];
+    this.fecha = this.route.snapshot.params['fecha'];
+    this.horario = this.route.snapshot.params['idhorario'];
     this.authService.authState.subscribe((usuario)=>{
       this.usuario=usuario;
       this.loggeIn=(usuario != null);
@@ -67,28 +74,31 @@ validacionusuario(cliente: any)
 {
 this.dni=cliente.DNI;
 this.caresxt=cliente.Extrangeria;
-this.fecha=new Date(cliente.FNacimiento);
+this.fecha1=new Date(cliente.FNacimiento);
 this.name= cliente.FullName;
 // console.log(this.dni);
 // console.log(this.caresxt);
 // console.log(this.fecha);
 // console.log(this.name);
-// this.clinicaService.NuevoPaciente
-//     (
-//       {
-//         IdPaciente: 9,
-//         DNI:this.dni,
-//         CarnetExtrangeria:this.carextr,
-//         FullName:this.fullname,
-//         FechaNacimiento:new Date(+this.fechanacimiento).toISOString().substring(0,10),
-//       }
-//     )
+this.clinicaService.NuevoPaciente
+    (
+      {
+        IdPaciente: 9,
+        DNI:this.dni,
+        CarnetExtrangeria:this.caresxt,
+        FullName:this.name,
+        FechaNacimiento:new Date(+this.fecha1).toISOString().substring(0,10),
+      }
+    )
   this.ruoter.navigate([
     'pago',
     this.dni,
     this.caresxt,
-    this.fecha.getTime(),
+    this.fecha1.getTime(),
     this.name,
+    this.doctor,
+    this.fecha,
+    this.horario,
     // datos.index
     // datos.tipo
   ]);

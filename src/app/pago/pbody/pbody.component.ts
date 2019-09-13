@@ -13,6 +13,9 @@ carextr;
 fechanaci;
 fullname;
 fechanacimiento;
+doctor;
+fecha;
+horario;
   constructor(
     private route: ActivatedRoute,
     private clinicaService :ClinicaService,
@@ -20,6 +23,9 @@ fechanacimiento;
   ) { }
 
   ngOnInit() {
+    this.doctor = this.route.snapshot.params['iddoctor'];
+    this.fecha = this.route.snapshot.params['fecha'];
+    this.horario = this.route.snapshot.params['idhorario'];
     this.dni = this.route.snapshot.params['dni'];
     this.carextr = this.route.snapshot.params['carextr'];
     this.fechanaci = this.route.snapshot.params['fecha'];
@@ -29,10 +35,13 @@ fechanacimiento;
 
 insertar()
 {
-console.log(this.dni);
-console.log(this.carextr);
-console.log(this.fechanacimiento);
-console.log(this.fullname);
+// console.log(this.dni);
+// console.log(this.carextr);
+// console.log(this.fechanacimiento);
+// console.log(this.fullname);
+
+
+
 // this.clinicaService.NuevoPaciente
 //     (
 //       {
@@ -49,8 +58,9 @@ this.ruoter.navigate([
   this.carextr,
   this.fechanacimiento.getTime(),
   this.fullname,
-  // datos.index
-  // datos.tipo
+  this.doctor,
+  this.fecha,
+  this.horario,
 ]);
 }
 
