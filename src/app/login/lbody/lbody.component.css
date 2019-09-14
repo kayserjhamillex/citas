@@ -2,10 +2,16 @@ img
 {
     width: 200px;
     height: 200px;
+    border-radius: 100%;
 }
+/*
 .mitad
 {
     width: 50%;
     margin: auto;
     float: left;
+} */
+.inputs
+{
+    width: 100%;
 }

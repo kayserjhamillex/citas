@@ -1,38 +1,136 @@
-<div *ngIf="!logeado" >
-    Falta Iniciar Sesión
-</div>
-<div class="mitad">
-    <hr>
-    <button (click)="accederConGoogle()" class="btn btn-danger btn-block">
-        <i class="fab fa-google"></i>
-        Iniciar Google
-    </button>
-    <br>
-    <button (click)="accederConFacebook()" class="btn btn-primary btn-block">
-            <i class="fab fa-facebook"></i>
-            Iniciar Facebook
-        </button>
-        <br>
-</div>
-<div class="mitad">
-    <div *ngIf="logeado" >
-            Ya Inicio Sesión
-        <br>
-        <div>
-            <img [src]="usuario.photoUrl" alt="">
-        </div>
-        <br>
-        <div>
-            <h1>
-                {{usuario.name}}
-            </h1>
+<br>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-12 col-md-12 shadow p-3 mb-5 bg-white rounded rounded-lg border border-light">
             <br>
-            <h3>
-                {{usuario.email}}
-            </h3>
-            
+            <div class="row justify-content-md-center">
+                <div class="col-12 text-center">
+                    <div class="imagen">
+                        <img src="../../../assets/img/usuario.png">
+                    </div>
+                    <div class="registrate">
+                        <h3>
+                            REGISTRATE
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <div class="col-12 col-sm-12 col-md-6">
+                    <form [formGroup]="RegistroForm" (ngSubmit)="validarregistro(RegistroForm.value)">
+                        <div class="col-12">
+                            <label for="correo">
+                                E-MAIL
+                            </label>
+                            <br>
+                            <input type="text" name="correo" formControlName="correo" class="inputs">
+                            <br>
+                            <span class="rojo" *ngIf="correo.invalid && correo.errors.required">
+                                *correo requerido
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <label for="datos">
+                                NOMBRES Y APELLIDOS
+                            </label>
+                            <br>
+                            <input type="text" name="datos" formControlName="datos" class="inputs">
+                            <br>
+                            <span class="rojo" *ngIf="datos.invalid && datos.errors.required">
+                                *nombres y apellidos requerido
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <label for="dni">
+                                DNI
+                            </label>
+                            <br>
+                            <input type="text" name="DNI" formControlName="DNI" maxlength="8" class="inputs">
+                            <br>
+                            <span class="rojo" *ngIf="DNI.invalid && DNI.errors.required">
+                                *dni requerido
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <label for="fechana">
+                                FECHA NACIMIENTO
+                            </label>
+                            <br>
+                            <input type="date" formControlName="fechana" class="inputs">
+                            <br>
+                            <span class="rojo" *ngIf="fechana.invalid && fechana.errors.required">
+                                *fecha de nacimiento requerido
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <label for="contrasena">
+                                CONTRASEÑA
+                            </label>
+                            <br>
+                            <input type="text" name="contrasena" formControlName="contrasena" class="inputs">
+                            <br>
+                            <span class="rojo" *ngIf="contrasena.invalid && contrasena.errors.required">
+                                *contraseña requerido
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <label for="recontrasena">
+                                CONFIRMAR CONTRASEÑA
+                            </label>
+                            <br>
+                            <input type="text" name="recontrasena" formControlName="recontrasena" class="inputs">
+                            <br>
+                            <span class="rojo" *ngIf="recontrasena.invalid && recontrasena.errors.required">
+                                *confirmar contraseña requerido
+                            </span>
+                        </div>
+                        <div class="col-12">
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                Registrar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6">
+                    <div class="col-12">
+                        <hr>
+                        <button type="button" (click)="accederConGoogle()" class="btn btn-danger btn-block">
+                            <i class="fab fa-google"></i>
+                            Iniciar Google
+                        </button>
+                        <br>
+                        <button type="button" (click)="accederConFacebook()" class="btn btn-primary btn-block">
+                            <i class="fab fa-facebook"></i>
+                            Iniciar Facebook
+                        </button>
+                        <br>
+                    </div>
+                    <div class="datosusuario">
+                        <div class="invisible" *ngIf="!logeado" >
+                            Falta Iniciar Sesión
+                        </div>
+                        <div class="gg text-center" *ngIf="logeado">
+                                <!-- Ya Inicio Sesión -->
+                            <br>
+                            <div>
+                                <img [src]="usuario.photoUrl" class="">
+                            </div>
+                            <br>
+                            <div>
+                                <h1>
+                                    {{usuario.name}}
+                                </h1>
+                                <h3>
+                                    {{usuario.email}}
+                                </h3> 
+                            </div>
+                            <button (click)="Salir()" class="btn btn-info btn-block">Salir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br> 
         </div>
-        <button (click)="Salir()" class="btn btn-info btn-block">Salir</button>
     </div>
 </div>
-

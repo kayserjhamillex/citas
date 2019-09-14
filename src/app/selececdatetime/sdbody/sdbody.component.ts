@@ -128,6 +128,7 @@ export class SdbodyComponent implements OnInit {
   // //para poder jalar los datos de l formgroup
   prueba(fecha, docto) 
   {
+    this.activado=true;
     this.reserva = this.clinicaService.ObtenerCita();
     const horasdisponibles = [];
     const horasnodisponibles = [];

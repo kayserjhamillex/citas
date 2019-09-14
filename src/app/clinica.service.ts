@@ -288,22 +288,22 @@ doctor =
     IdSecretaria:1,
     doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
   },
-  {
-    IdDoctor:17, 
-    FullName:'Medico general2',
-    IdEspecialidad:1,
-    CMP:9854325,
-    IdSecretaria:1,
-    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
-  },
-  {
-    IdDoctor:18, 
-    FullName:'Medico general3',
-    IdEspecialidad:1,
-    CMP:9854325,
-    IdSecretaria:1,
-    doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
-  }
+  // {
+  //   IdDoctor:17, 
+  //   FullName:'Medico general2',
+  //   IdEspecialidad:1,
+  //   CMP:9854325,
+  //   IdSecretaria:1,
+  //   doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  // },
+  // {
+  //   IdDoctor:18, 
+  //   FullName:'Medico general3',
+  //   IdEspecialidad:1,
+  //   CMP:9854325,
+  //   IdSecretaria:1,
+  //   doctorimagen:'https://image.freepik.com/foto-gratis/hermosa-joven-doctora-mirando-camara-oficina_1301-7781.jpg'
+  // }
 ];
 hora = 
 [

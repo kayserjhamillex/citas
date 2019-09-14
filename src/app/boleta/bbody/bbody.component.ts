@@ -22,8 +22,8 @@ export class BbodyComponent implements OnInit {
   doctor;
   fecha;
   horario;
-  horahoy;
-  fechacita;
+  horahoy:Date;
+  fechacita:Date;
   constructor(
     private route: ActivatedRoute,
     private clinicaService :ClinicaService,
@@ -40,7 +40,9 @@ export class BbodyComponent implements OnInit {
     this.fullname = this.route.snapshot.params['name'];
     this.horahoy = new Date();
     console.log(this.horahoy);
-    this.fechacita = new Date(this.fecha);
+    this.fechacita= new Date(this.fecha);
+    console.log(this.fechacita);
+    
     
 //la boleta nesececita los datos siguientes:
 //nombre del doctor
@@ -52,5 +54,13 @@ export class BbodyComponent implements OnInit {
     this.doctores=this.clinicaService.ObtenerDoctor();
     this.horarios=this.clinicaService.ObtenerHorario();
     this.horas=this.clinicaService.ObtenerHora();
+
+
+
+
+
+
+
+
   }
 }

@@ -108,15 +108,23 @@ const config = new AuthServiceConfig([
     provider: new GoogleLoginProvider("126510371816-548i3tga1oull84k9jn0eod5bfsjhm09.apps.googleusercontent.com")
   },
   //inicio secion local
-  {
-    id: FacebookLoginProvider.PROVIDER_ID,
-    provider: new FacebookLoginProvider("630989510742058")
-  }  
-  //para iniciar sesion en el hosting	
   // {
   //   id: FacebookLoginProvider.PROVIDER_ID,
-  //   provider: new FacebookLoginProvider("2156200141339667")
-  // }  	
+  //   provider: new FacebookLoginProvider("630989510742058")
+  // }  
+  //para iniciar sesion en el hosting	http://aplicacion.kayserjhamillex.com
+  {
+    id: FacebookLoginProvider.PROVIDER_ID,
+    provider: new FacebookLoginProvider("2156200141339667")
+  }
+  //para iniciar sesion en el hosting	http://aplicacion.jhamillex22.com
+  // {
+  //   id: FacebookLoginProvider.PROVIDER_ID,
+  //   provider: new FacebookLoginProvider("2429203277316843")
+  // }
+  
+  
+
 ]);
  export function provideConfig() {
   return config;
