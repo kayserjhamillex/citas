@@ -33,8 +33,8 @@ export class LbodyComponent implements OnInit {
           correo: new FormControl('',[Validators.nullValidator,Validators.email]),
           datos: new FormControl('',Validators.nullValidator),
           DNI: new FormControl('00000000',[Validators.nullValidator,Validators.minLength(8),Validators.maxLength(8)]),
-          contrasena: new FormControl('',[Validators.nullValidator]),
-          recontrasena: new FormControl('',Validators.nullValidator),
+          contraseña: new FormControl('',[Validators.nullValidator]),
+          recontraseña: new FormControl('',Validators.nullValidator),
           fechana: new FormControl('dd/MM/yyyy',[Validators.required])
         }
       );
@@ -50,30 +50,9 @@ export class LbodyComponent implements OnInit {
   Salir(): void {
     this.authService.signOut();
   }
-  get correo() {
-    return this.RegistroForm.get('correo');
-  }
-  get datos() {
-    return this.RegistroForm.get('datos');
-  }
-  get DNI() {
-    return this.RegistroForm.get('DNI');
-  }
-  get contrasena() {
-    return this.RegistroForm.get('contrasena');
-  }
-  get recontrasena() {
-    return this.RegistroForm.get('recontrasena');
-  }
-  get fechana() {
-    return this.RegistroForm.get('fechana');
-  }
-
-
-
-
   validarregistro(datos)
   {
     console.log(datos);
+    
   }
 }

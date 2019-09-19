@@ -25,9 +25,9 @@
                             <br>
                             <input type="text" name="correo" formControlName="correo" class="inputs">
                             <br>
-                            <span class="rojo" *ngIf="correo.invalid && correo.errors.required">
-                                *correo requerido
-                            </span>
+                            <!-- <span class="rojo" *ngIf="FullName.invalid && FullName.errors.required">
+                                *nombre es requerido
+                            </span> -->
                         </div>
                         <div class="col-12">
                             <label for="datos">
@@ -35,10 +35,6 @@
                             </label>
                             <br>
                             <input type="text" name="datos" formControlName="datos" class="inputs">
-                            <br>
-                            <span class="rojo" *ngIf="datos.invalid && datos.errors.required">
-                                *nombres y apellidos requerido
-                            </span>
                         </div>
                         <div class="col-12">
                             <label for="dni">
@@ -46,10 +42,6 @@
                             </label>
                             <br>
                             <input type="text" name="DNI" formControlName="DNI" maxlength="8" class="inputs">
-                            <br>
-                            <span class="rojo" *ngIf="DNI.invalid && DNI.errors.required">
-                                *dni requerido
-                            </span>
                         </div>
                         <div class="col-12">
                             <label for="fechana">
@@ -57,32 +49,20 @@
                             </label>
                             <br>
                             <input type="date" formControlName="fechana" class="inputs">
-                            <br>
-                            <span class="rojo" *ngIf="fechana.invalid && fechana.errors.required">
-                                *fecha de nacimiento requerido
-                            </span>
                         </div>
                         <div class="col-12">
-                            <label for="contrasena">
+                            <label for="contraseña">
                                 CONTRASEÑA
                             </label>
                             <br>
-                            <input type="text" name="contrasena" formControlName="contrasena" class="inputs">
-                            <br>
-                            <span class="rojo" *ngIf="contrasena.invalid && contrasena.errors.required">
-                                *contraseña requerido
-                            </span>
+                            <input type="text" name="contraseña" formControlName="contraseña" class="inputs">
                         </div>
                         <div class="col-12">
-                            <label for="recontrasena">
+                            <label for="recontraseña">
                                 CONFIRMAR CONTRASEÑA
                             </label>
                             <br>
-                            <input type="text" name="recontrasena" formControlName="recontrasena" class="inputs">
-                            <br>
-                            <span class="rojo" *ngIf="recontrasena.invalid && recontrasena.errors.required">
-                                *confirmar contraseña requerido
-                            </span>
+                            <input type="text" name="recontraseña" formControlName="recontraseña" class="inputs">
                         </div>
                         <div class="col-12">
                             <br>
